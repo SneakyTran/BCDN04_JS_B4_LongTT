@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="w-50">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Tìm ngày, tháng, năm của ngày tiếp theo và ngày trước đó</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="day">Ngày</label>
+                            <input id="ipDay" type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="month">Tháng</label>
+                            <input id="ipMonth" type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="year">Năm</label>
+                            <input id="ipYear" type="number" class="form-control">
+                        </div>
+                        <button type="button" class="btn btn-success" id="btnCalDate">Show result</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <p id="txtTomorrow">Ngày tiếp theo: </p>
+                    <p id="txtYesterday">Ngày trước đó: </p>
+                </div>
+            </div>
+        </div>
+        <div class="w-50 mt-5">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Tìm số ngày của tháng nhập vào</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="month">Tháng</label>
+                            <input id="ipMonth2" type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="year">Năm</label>
+                            <input id="ipYear2" type="number" class="form-control">
+                        </div>
+                        <button type="button" class="btn btn-success" id="btnShowTotalDay">Show result</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <p id="txtTotalDay"></p>
+                </div>
+            </div>
+        </div>
+        <div class="w-50 mt-5">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>In ra cách đọc số nguyên có 3 chữ số</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="month">Nhập số nguyên có 3 chữ số</label>
+                            <input id="ipNumber" type="number" class="form-control">
+                        </div>
+                        <button type="button" class="btn btn-success" id="btnReadNumber">Đọc số nguyên</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <p id="txtNumberResult"></p>
+                </div>
+            </div>
+        </div>
+        <div class="w-50 mt-5">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Tìm tên sinh viên xa trường nhất</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="month">Nhập tên sinh viên 1</label>
+                            <input id="ipSv1Name" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="month">Nhập tọa độ địa chỉ của sinh viên 1</label>
+                            <input id="ipSv1X" type="number" class="form-control" placeholder="x">
+                            <input id="ipSv1Y" type="number" class="form-control mt-2" placeholder="y">
+                        </div>
+                        <div class="form-group">
+                            <label for="month">Nhập tên sinh viên 2</label>
+                            <input id="ipSv2Name" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="month">Nhập tọa độ địa chỉ của sinh viên 2</label>
+                            <input id="ipSv2X" type="number" class="form-control" placeholder="x">
+                            <input id="ipSv2Y" type="number" class="form-control mt-2" placeholder="y">
+                        </div>
+                        <div class="form-group">
+                            <label for="month">Nhập tên sinh viên 3</label>
+                            <input id="ipSv3Name" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="month">Nhập tọa độ địa chỉ của sinh viên 3</label>
+                            <input id="ipSv3X" type="number" class="form-control" placeholder="x">
+                            <input id="ipSv3Y" type="number" class="form-control mt-2" placeholder="y">
+                        </div>
+                        <div class="form-group">
+                            <label for="month">Nhập tọa độ trường học</label>
+                            <input id="ipSchX" type="number" class="form-control" placeholder="x">
+                            <input id="ipSchY" type="number" class="form-control mt-2" placeholder="y">
+                        </div>
+                        <button type="button" class="btn btn-success" id="btnFind">Tìm sinh viên</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <p id="txtStudentNameResult"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    
+        <script src="./js/main.js"></script>
+</body>
+
+</html>
