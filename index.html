@@ -12,7 +12,59 @@
 
 <body>
     <div class="container">
-        <div class="w-50">
+        <div class="w-50 mt-5">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Hello World</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label>Ai đang sử dụng?</label>
+                            <select class="form-control" id="selectUser">
+                                <option>--Chọn để chào--</option>
+                                <option value="B">Bố</option>
+                                <option value="M">Mẹ</option>
+                                <option value="A">Anh trai</option>
+                                <option value="E">Em gái</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-success" id="btnSort">Chào</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <p id="txtSortedNumberList"></p>
+                </div>
+            </div>
+        </div>
+        <div class="w-50 mt-5">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>In ra 3 số theo thứ tự tăng dần</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label>Số thứ nhất</label>
+                            <input id="ipNum1" type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Số thứ hai</label>
+                            <input id="ipNum2" type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Số thứ ba</label>
+                            <input id="ipNum3" type="number" class="form-control">
+                        </div>
+                        <button type="button" class="btn btn-success" id="btnSort">Show result</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <p id="txtSortedNumberList"></p>
+                </div>
+            </div>
+        </div>
+        <div class="w-50 mt-5">
             <div class="card">
                 <div class="card-header text-center">
                     <h4>Tìm ngày, tháng, năm của ngày tiếp theo và ngày trước đó</h4>
@@ -137,8 +189,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
-    
-        <script src="./js/main.js"></script>
+
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
