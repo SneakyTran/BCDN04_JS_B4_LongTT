@@ -1,59 +1,3 @@
-//todo Cho người dùng nhập vào 3 số nguyên. Viết chương trình xuất 3 số theo thứ tự tăng dần
-/**
- * ?Khối 1: input
- * num1, num2, num3
- *
- * ?Khối 2: progress
- * B1: Khai báo biến và gán giá trị cho biến từ input form
- * B2:
- * Nếu num1 > num2
- *      temp = num1;
- *      num1 = num2;
- *      num2 = temp;
- * Nếu num2 > num3
- *      temp = num2;
- *      num2 = num3;
- *      num3 = temp;
- * Nếu num1 > num3
- *      temp = num1;
- *      num1 = num3;
- *      num3 = temp;
- * B3: In ra màn hình num1, num2 , num3 (đẫ được sắp xếp)
- *
- * ?Khối 3: output
- * 3 số theo thứ tự tăng dần
- *
- */
-function sort() {
-    var num1 = document.getElementById("ipNum1").value;
-    var num2 = document.getElementById("ipNum2").value;
-    var num3 = document.getElementById("ipNum3").value;
-    var temp = 0;
-    if (num1 > num2) {
-        temp = num1;
-        num1 = num2;
-        num2 = temp;
-    }
-    if (num2 > num3) {
-        temp = num2;
-        num2 = num3;
-        num3 = temp;
-    }
-    if (num1 > num3) {
-        temp = num1;
-        num1 = num3;
-        num3 = temp;
-    }
-    document.getElementById("txtSortedNumberList").innerHTML =
-        num1 + " " + num2 + " " + num3;
-}
-document.getElementById("btnSort").onclick = sort;
-
-//todo Viết chương trình “Chào hỏi” các thành viên trong gia đình với các đặc điểm. Đầu tiên máy sẽ hỏi ai sử dụng máy. Sau đó dựa vào câu trả lời và đưa ra lời chào phù hợp. Giả sử trong gia đình có 4 thành viên: Bố (B), Mẹ (M), anh Trai (A) và Em gái (E)
-
-
-
-
 //todo  Viết chương trình nhập vào ngày, tháng, năm (Giả sử nhập đúng, không cần kiểm tra hợp lệ).Tìm ngày, tháng, năm của ngày tiếp theo. Tương tự tìm ngày tháng năm của ngày trước đó.
 
 /**
@@ -297,7 +241,7 @@ document.getElementById("btnShowTotalDay").onclick = showTotalDay;
  *
  */
 
-function text(number) {
+function toText(number) {
     switch (number) {
         case 1:
             return "một";
@@ -333,15 +277,15 @@ function textTwoChar(num1, num2) {
         if (num2 == 0) {
             return "mười";
         } else {
-            return "mười " + text(num2);
+            return "mười " + toText(num2);
         }
     } else if (num1 != 0) {
         if (num2 == 0) {
-            return text(num1) + " mươi";
+            return toText(num1) + " mươi";
         } else if (num2 == 1) {
-            return text(num1) + " mươi mốt";
+            return toText(num1) + " mươi mốt";
         } else {
-            return text(num1) + " mươi " + text(num2);
+            return toText(num1) + " mươi " + toText(num2);
         }
     }
 }
@@ -352,17 +296,19 @@ function readNumber() {
     var num2 = Math.trunc((number / 10) % 10);
     var num1 = Math.trunc(number / 100);
     var result = "";
-    if (num1 == 0) {
+    if (number < 10) {
+        result = toText(num3);
+    } else if (number < 100) {
         result = textTwoChar(num2, num3);
     } else {
         if (num2 == 0) {
             if (num3 == 0) {
-                result = text(num1) + " trăm";
+                result = toText(num1) + " trăm";
             } else {
-                result = text(num1) + " trăm lẻ " + text(num3);
+                result = toText(num1) + " trăm lẻ " + toText(num3);
             }
         } else {
-            result = text(num1) + " trăm " + textTwoChar(num2, num3);
+            result = toText(num1) + " trăm " + textTwoChar(num2, num3);
         }
     }
     document.getElementById("txtNumberResult").innerHTML = result;
